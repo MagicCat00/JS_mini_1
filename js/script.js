@@ -9,12 +9,12 @@ const data = guestsInfo;
   {name: "Клава", age: 22}
 ]
 */
+let allAge = 0;
 
 function calcAvgAge(array) {
-  array.forEach(element => {
-    console.log(element.age);
+  array.forEach((element, i) => {
+    allAge += +element.age;
   });
-  
-  let avg = data.reduce((r,i) => r + i.age, 0) / (data.length || 1);
-    console.log(avg);
+  return allAge / array.length
+
 }
